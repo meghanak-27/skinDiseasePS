@@ -1,0 +1,12 @@
+pip install opencv-python pandas numpy
+
+
+git init 
+git status
+git add .
+>>git add <file_name>
+git commit -m "Initial commit"
+git remote add origin https://github.com/username/repository.git
+>>git checkout -b feature/initial-setup-meghana
+>>git push origin feature/initial-setup-meghana
+git push -u origin main
