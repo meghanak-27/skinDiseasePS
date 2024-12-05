@@ -1,4 +1,26 @@
-pip install opencv-python pandas numpy
+pip install opencv-python pandas numpy matplotlib gradio
+
+snnippet 1:drive file init fn for colab:
+# def __init__(self, mountpath):
+  #   import os
+  #   self.path = mountpath
+  #   from google.colab import drive
+  #   drive.mount(self.path, force_remount=True)
+
+snippet 2:for colab:
+# drive=driveFile('/content/drive')
+# images,labels=drive.dataload('MyDrive/train_set')
+
+last 5th snippet,first line:
+test_images, test_labels = drive.dataload('MyDrive/test_set')
+
+
+
+
+
+
+
+
 
 
 git init 
@@ -11,9 +33,17 @@ git remote add origin https://github.com/username/repository.git
 >>git push origin feature/initial-setup-meghana
 git push -u origin main
 
+
+
+
+
 Milestone-2:
 We are currently implementing ANN code, with 400 neurons at input layer(one image,features is studied one at a time)
 1 hidden layer neuron, 1 o/p layer neuron bcz its binary classification
+
+
+
+
 
 Milestone-3:
 Multi-classification
