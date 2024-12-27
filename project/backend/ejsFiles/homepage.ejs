@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/styles/homepage.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Navigation Bar -->
+        <nav>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Model Info</a>
+                <a href="#">Contact Us</a>
+
+                <% if (userId) { %>  <!-- Check if logged in -->
+                    <a href="/upload">Upload Image</a>  <!-- Show upload link if logged in -->
+                    <a href="/logout">Logout</a>  <!-- Show logout link -->
+                <% } else { %>  <!-- Show login if not logged in -->
+                    <a href="/login">Login</a>
+                <% } %>
+                
+            </div>
+        </nav>
+
+        <!-- Content Section -->
+        <div class="content">
+            <h1>Welcome to Skin Disease Classification</h1>
+            <p>This platform helps you identify various skin diseases using AI. If you want to upload an image for classification, please <a href="/login">login</a>.</p>
+
+            <% if (loginRequired) { %>  <!-- Check if login is required -->
+                <div class="login-prompt-box">
+                    <p>You need to <a href="/login">log in</a> before uploading an image.</p>
+                </div>
+            <% } %>
+        </div>
+    </div>
+    <div class="right-image">
+        <img src="/images/bg3.webp" alt="Right Image">
+    </div>
+    <div id="chatbotButton" class="chatbot-button">
+        <img src="/images/aiChat.jpg" alt="Chatbot" />
+    </div>
+    <div id="readMore">
+        <a href="/readmore">Read More</a>
+    </div>
+    <!-- Chatbox UI -->
+    <div id="chatbox" class="chatbox">
+        <div class="chatbox-header">
+            <h3>Skin Disease Chatbot</h3>
+            <button id="closeChatbox" class="close-chatbox">X</button>
+        </div>
+        <div class="chatbox-body" id="chatboxBody">
+            <!-- Messages will be displayed here -->
+        </div>
+        <div class="chatbox-footer">
+            <input type="text" id="userInput" placeholder="Ask about skin diseases..." />
+            <button id="sendBtn">Send</button>
+        </div>
+    </div>
+    <script src="/scripts/homepage.js"></script>
+
+</body>
+</html>

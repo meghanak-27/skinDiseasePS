@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/upload.css">
+</head>
+<body>
+    <div class="uploadForm">
+
+    
+    <h1 style="margin-bottom:20px;">Upload an Image</h1>
+    <!-- <br> -->
+    
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" name="image" id="imageInput" accept="image/*" required />
+        <br>
+        <br>
+        
+        <button type="submit">Upload</button>
+    </form>
+    
+    <% if (prediction) { %>
+        <h3>Prediction: <%= prediction %></h3>
+    <% } %>
+    </div>
+    <script src="/scripts/upload.js">
+        
+    </script>
+    <div class="right-image">
+        <img src="/images/bg3.webp" alt="Right Image">
+    </div>
+    
+        <!-- Navigation Bar -->
+        <nav>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Model Info</a>
+                <a href="#">Contact Us</a>
+                <a href="/logout">Logout</a> 
+                
+            </div>
+        </nav>
+
+        
+    
+
+    <div id="chatbotButton" class="chatbot-button">
+        <img src="/images/aiChat.jpg" alt="Chatbot" />
+    </div>
+    
+    <!-- Chatbox UI -->
+    <div id="chatbox" class="chatbox">
+        <div class="chatbox-header">
+            <h3>Skin Disease Chatbot</h3>
+            <button id="closeChatbox" class="close-chatbox">X</button>
+        </div>
+        <div class="chatbox-body" id="chatboxBody">
+            <!-- Messages will be displayed here -->
+        </div>
+        <div class="chatbox-footer">
+            <input type="text" id="userInput" placeholder="Ask about skin diseases..." />
+            <button id="sendBtn">Send</button>
+        </div>
+    </div>
+
+    <script src="/scripts/homepage.js"></script>
+    <!-- News Section -->
+    <div class="news-section">
+        <h2>Catch articles on Skin Diseases</h2>
+        <% if (articles && articles.length > 0) { %>
+            <ul>
+                <% articles.forEach(article => { %>
+                    <li>
+                        <h3><a href="<%= article.url %>" target="_blank"><%= article.title %></a></h3>
+                        <p><%= article.description %></p>
+                        <small>Published on: <%= new Date(article.publishedAt).toLocaleDateString() %></small>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>No news articles available at the moment. Please try again later.</p>
+        <% } %>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,300 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full-page background image */
+body {
+    background-image: url("/images/blackbg.avif");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Centered container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+
+/* Right side rotated image */
+.right-image {
+    position: fixed;
+    top: 0;
+    right: 0; 
+    width: 20vw; 
+    height: 100vh; 
+    
+    z-index: -1; 
+    object-fit: cover; 
+}
+
+
+/* If you want the image to be fully stretched, remove any fixed aspect ratio constraints */
+.right-image img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Navigation Bar Styling */
+nav {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content:left;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+.uploadForm{
+    align-content: center;
+
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Content Section Styling */
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Upload Box Styling */
+.upload-box {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    padding: 40px;
+    border-radius: 10px;
+    width: 100%;
+    
+    max-width: 500px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.upload-box h1 {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.upload-box form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.upload-box input[type="file"] {
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.upload-box button {
+    width: 100%;
+    max-width: 200px;
+    padding: 10px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.upload-box button:hover {
+    background-color: #0056b3;
+}
+
+.upload-box h3 {
+    font-size: 15px;
+    margin-top: 15px;
+    color: #4a442c;
+}
+
+/* Positioning and Styling for Chatbot Button */
+.chatbot-button {
+    position: fixed;
+    bottom: 80px;
+    left: 20px;
+    background-color: #8f9dac;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(197, 189, 81, 0.2);
+}
+
+.chatbot-button img {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+
+/* Chatbox Styling */
+.chatbox {
+    display: none;
+    position: fixed;
+    bottom: 70px;
+    left: 20px;
+    width: 300px;
+    background-color: #605e5a;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ddd;
+}
+
+.chatbox-header {
+    background-color: #000000;
+    color: rgb(251, 251, 251);
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatbox-footer {
+    padding: 10px;
+    display: flex;
+}
+
+.chatbox-footer input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.chatbox-footer button {
+    padding: 8px 15px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.chatbox-footer button:hover {
+    background-color: #000000;
+}
+
+/* Chatbox messages */
+.chatbox-body {
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.user-message {
+    background-color: #17141e;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 8px;
+    text-align: right;
+}
+
+.bot-message {
+    background-color: #18181e;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.close-chatbox {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.close-chatbox:hover {
+    background-color: darkred;
+}
+
+/* News Section Styling (Unchanged) */
+.news-section {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;  /* Reduced padding */
+    font-size: 12px;  /* Reduced font size */
+    overflow: hidden;
+    height: 60px;
+}
+
+.news-section ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    white-space: nowrap; /* Prevents wrapping */
+    animation: scroll-news 20s linear infinite;
+}
+
+.news-section li {
+    padding: 0 20px;
+}
+
+.news-section a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.news-section a:hover {
+    color: #ffcc00;
+}
+
+/* Create scrolling animation */ 
+@keyframes scroll-news {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
