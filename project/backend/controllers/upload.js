@@ -27,6 +27,7 @@ async function uploadImage(req, res) {
 
         const response = await axios.post('https://p21-sd-flask.onrender.com/predict', formData, {
             headers: formData.getHeaders(), // Attach FormData headers
+            timeout: 10000,
         });
         console.log('Uploaded file path:', filePath);  // Log this to verify the path
 
