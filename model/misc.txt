@@ -1,0 +1,3 @@
+python -m venv skin_disease_env
+source skin_disease_env/bin/activate
+
