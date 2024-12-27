@@ -40,8 +40,6 @@ app.use('/logout',(req,res)=>{
 })
 app.use('/ask-chatbot', chatbotRouter);
 
-// const uri = `mongodb+srv://project21Admin:${process.env.DB_PASSWORD}@cluster0.ytjrm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
-// const uri = `mongodb+srv://project21Admin:${process.env.DB_PASSWORD}@cluster0.ytjrm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 connectDB();
 
 
