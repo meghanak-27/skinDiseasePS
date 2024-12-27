@@ -25,7 +25,7 @@ async function uploadImage(req, res) {
         // Send the file to Flask API for prediction
       
 
-        const response = await axios.post('http://localhost:5001/predict', formData, {
+        const response = await axios.post('https://p21-sd-flask.onrender.com', formData, {
             headers: formData.getHeaders(), // Attach FormData headers
         });
         console.log('Uploaded file path:', filePath);  // Log this to verify the path
